@@ -147,8 +147,9 @@ def main():
 
         model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
         prompt = PromptTemplate(template=""" 
-            Answer the question as detailed as possible from the provided context, 
-            if the answer is not in provided context say, "answer is not available in the context". 
+            Please provide a detailed answer based on the available context. 
+            If the answer cannot be found within the given context, respond with, 
+            "The required context is not to be found in the document " 
 
             Context:\n {context}?\n
             Question:\n{question}\n
